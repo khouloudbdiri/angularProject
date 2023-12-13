@@ -1,0 +1,69 @@
+<!-- Button trigger modal -->
+<button class="btn" (click)="openModal()" >
+    <img src="assets/images/edit.png" alt="" width="20px">
+</button>
+    
+<!-- Modal -->
+  <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}" >
+    <div class="modal-dialog" role="document">
+          <div class="modal-content">
+                <div class="modal-header">
+                      <h4 class="modal-title" style="font-family: 'Comic Sans MS', 'Comic Sans', cursive;">Edit Product</h4>
+                      <button type="button" class="btn btn-default" aria-label="Close" (click)="closeModal()"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                <div class="modal-body">
+                    <template *ngTemplateOutlet="formProduct"></template>
+                </div>
+                <div class="modal-footer">
+                      <button type="button" class="btn btn-default" (click)="closeModal()" >Close</button>
+                </div>
+       </div>
+    </div>
+</div>
+
+<ng-template #formProduct >
+    
+    <form (ngSubmit)="updatearticle()" >
+        <div class="mb-3">
+          </div>
+          <div class="mb-3">
+            
+            <input required minlength="4" #designation="ngModel"
+            type="text" class="form-control" id="designation"  name = "designation" placeholder="Désignation *" [(ngModel)]="products.designation" >
+          </div>
+          <div *ngIf="designation.invalid && (designation.dirty || designation.touched)"
+    class="alert">
+
+          <div *ngIf="designation.errors?.['required']" [ngStyle]="{'color': 'red'}">
+            Enter the designation
+          </div>
+          <div *ngIf="designation.errors?.['minlength']" [ngStyle]="{'color': 'red'}">
+            The designation must have at least 4 characters
+          </div>
+         </div>
+
+          <div class="mb-3">
+            
+            <input type="number" class="form-control" id="prix"  name = "prix" placeholder="Prix" [(ngModel)]="products.prix" >
+          </div>
+          <div class="mb-3">
+            
+            <input type="text" class="form-control" id="qtestock"  name = "qtestock" placeholder="Quantité" [(ngModel)]="products.qtestock" >
+          </div>
+         
+      
+          <div>
+              <file-pond #myPond 
+                  [options]="pondOptions"
+                  [files]="pondFiles"
+                >
+              </file-pond>
+           </div>
+        
+        <div>
+          <button type="submit" class="btn" (clic)="updatearticle()" style="background-color: #c0e9e9;">Save</button>
+        </div>
+       
+        </form>
+
+</ng-template>

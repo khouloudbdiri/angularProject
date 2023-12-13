@@ -1,1 +1,76 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "~filepond/dist/filepond.min.css";
+@import "~filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css";
+
+body {
+    padding: 0;
+    margin-right: 0;
+    margin-left: 0;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    background-color: rgba(204, 122, 170, 0.3);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90vh;
+    padding: 10px;
+}
+.image-container {
+    max-width: 50%;
+}
+
+.image-container img {
+    width: 110%;
+    height: auto;
+    display: block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.text-container {
+    padding: 20px;
+    width: 40%;
+    height: 80px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-size: 30px;
+}
+.text-container1{
+    padding: 20px;
+    width: 40%;
+    height: 140px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-size: 30px;
+}
+
+.text-sales {
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    margin-top: 200px;
+    font-family: cursive;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.image-box {
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 20px; 
+    height: 300px; 
+    width: 500px;
+    overflow: hidden;
+}
+.row {
+    justify-content: center;
+    display: flex;
+}
+
+.index{
+    padding: 40px;
+}
